@@ -1,0 +1,296 @@
+ImprovedVAE_Config()
+	batch_size: 32
+	beta1: 0.9
+	beta2: 0.95
+	channels: [64, 64, 128, 256, 256]
+	crop_size: 176
+	disc_start: 5000
+	disc_weight: 0.5
+	gpu_num: 3
+	grad_clip: 1.0
+	gradient_accumulation_steps: 1
+	img_size: 176
+	kl_weight: 0.0005
+	layers: [3, 3, 3, 3]
+	learning_rate: 0.0006
+	lr_decay_iters: 75000
+	max_iters: 75000
+	min_lr: 6e-05
+	num_epoch: 40
+	warmup_iters: 1000
+	weight_decay: 0.0
+	z_channel: 8
+
+total_params: 23.49M, encoder_params: 10.61M, decoder_params: 10.12M, discriminator_params: 2.77M
+/home/work/.local/lib/python3.10/site-packages/torch/autograd/__init__.py:266: UserWarning: Grad strides do not match bucket view strides. This may indicate grad was not created according to the gradient layout contract, or that the param's strides changed since DDP was constructed.  This is not an error, but may impair performance.
+grad.sizes() = [256, 256, 1, 1], strides() = [256, 1, 256, 256]
+bucket_view.sizes() = [256, 256, 1, 1], strides() = [256, 1, 1, 1] (Triggered internally at ../torch/csrc/distributed/c10d/reducer.cpp:322.)
+  Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+/home/work/.local/lib/python3.10/site-packages/torch/autograd/__init__.py:266: UserWarning: Grad strides do not match bucket view strides. This may indicate grad was not created according to the gradient layout contract, or that the param's strides changed since DDP was constructed.  This is not an error, but may impair performance.
+grad.sizes() = [256, 256, 1, 1], strides() = [256, 1, 256, 256]
+bucket_view.sizes() = [256, 256, 1, 1], strides() = [256, 1, 1, 1] (Triggered internally at ../torch/csrc/distributed/c10d/reducer.cpp:322.)
+  Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+/home/work/.local/lib/python3.10/site-packages/torch/autograd/__init__.py:266: UserWarning: Grad strides do not match bucket view strides. This may indicate grad was not created according to the gradient layout contract, or that the param's strides changed since DDP was constructed.  This is not an error, but may impair performance.
+grad.sizes() = [256, 256, 1, 1], strides() = [256, 1, 256, 256]
+bucket_view.sizes() = [256, 256, 1, 1], strides() = [256, 1, 1, 1] (Triggered internally at ../torch/csrc/distributed/c10d/reducer.cpp:322.)
+  Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+step 500, loss 0.814, rec 0.269, kl 0.544, g 0.000, w 1.000, d 0.000, lr: 0.0002994, consume 171.26s
+step 1000, loss 0.233, rec 0.189, kl 0.044, g 0.000, w 1.000, d 0.000, lr: 0.0005994, consume 94.17s
+step 1500, loss 0.220, rec 0.176, kl 0.044, g 0.000, w 1.000, d 0.000, lr: 0.0005999, consume 93.61s
+    valid loss: 0.231, rec 0.168, kl 0.063, g 0.000, w 1.000, d 0.412, consume: 62.048s
+100%|█████████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 18.12it/s]
+100%|█████████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 19.04it/s]
+FID:  131.00072932053598
+epoch: 0, consume: 531.486s
+step 2000, loss 0.209, rec 0.166, kl 0.043, g 0.000, w 1.000, d 0.000, lr: 0.0005998, consume 25.71s
+step 2500, loss 0.208, rec 0.165, kl 0.043, g 0.000, w 1.000, d 0.000, lr: 0.0005995, consume 93.89s
+step 3000, loss 0.205, rec 0.162, kl 0.043, g 0.000, w 1.000, d 0.000, lr: 0.0005990, consume 93.83s
+step 3500, loss 0.202, rec 0.160, kl 0.042, g 0.000, w 1.000, d 0.000, lr: 0.0005985, consume 93.78s
+    valid loss: 0.198, rec 0.156, kl 0.042, g 0.000, w 1.000, d 0.412, consume: 32.153s
+epoch: 1, consume: 397.612s
+step 4000, loss 0.199, rec 0.157, kl 0.042, g 0.000, w 1.000, d 0.000, lr: 0.0005978, consume 43.89s
+step 4500, loss 0.198, rec 0.156, kl 0.042, g 0.000, w 1.000, d 0.000, lr: 0.0005970, consume 94.41s
+step 5000, loss 0.196, rec 0.155, kl 0.041, g 0.000, w 1.000, d 0.000, lr: 0.0005961, consume 93.89s
+[rank0]:[W reducer.cpp:1360] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[rank1]:[W reducer.cpp:1360] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[rank2]:[W reducer.cpp:1360] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+step 5500, loss 0.211, rec 0.161, kl 0.041, g 0.009, w 0.174, d 0.861, lr: 0.0005951, consume 224.28s
+    valid loss: 0.680, rec 0.165, kl 0.040, g 0.348, w 1.000, d 0.824, consume: 31.993s
+epoch: 2, consume: 528.310s
+step 6000, loss 0.215, rec 0.168, kl 0.041, g 0.007, w 0.016, d 0.728, lr: 0.0005939, consume 61.68s
+step 6500, loss 0.216, rec 0.168, kl 0.040, g 0.008, w 0.016, d 0.686, lr: 0.0005927, consume 94.28s
+step 7000, loss 0.218, rec 0.169, kl 0.040, g 0.008, w 0.016, d 0.768, lr: 0.0005913, consume 115.88s
+step 7500, loss 0.218, rec 0.171, kl 0.040, g 0.007, w 0.012, d 0.645, lr: 0.0005898, consume 95.79s
+    valid loss: 0.883, rec 0.163, kl 0.041, g 0.412, w 1.000, d 0.824, consume: 32.569s
+epoch: 3, consume: 422.037s
+step 8000, loss 0.219, rec 0.172, kl 0.040, g 0.008, w 0.015, d 0.744, lr: 0.0005882, consume 80.58s
+step 8500, loss 0.228, rec 0.177, kl 0.039, g 0.011, w 0.051, d 0.883, lr: 0.0005864, consume 92.28s
+step 9000, loss 0.222, rec 0.173, kl 0.040, g 0.009, w 0.025, d 0.784, lr: 0.0005846, consume 92.38s
+step 9500, loss 0.221, rec 0.172, kl 0.040, g 0.010, w 0.030, d 0.812, lr: 0.0005826, consume 92.38s
+    valid loss: 0.409, rec 0.173, kl 0.039, g 0.122, w 1.000, d 0.412, consume: 31.723s
+epoch: 4, consume: 393.144s
+step 10000, loss 0.221, rec 0.174, kl 0.040, g 0.008, w 0.029, d 0.841, lr: 0.0005805, consume 97.37s
+step 10500, loss 0.219, rec 0.171, kl 0.039, g 0.009, w 0.019, d 0.736, lr: 0.0005783, consume 92.35s
+step 11000, loss 0.222, rec 0.173, kl 0.039, g 0.009, w 0.024, d 0.831, lr: 0.0005760, consume 92.39s
+    valid loss: 0.363, rec 0.179, kl 0.038, g 0.103, w 1.000, d 0.824, consume: 31.699s
+100%|█████████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 17.92it/s]
+100%|█████████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 18.51it/s]
+FID:  204.83658642731083
+epoch: 5, consume: 425.288s
+step 11500, loss 0.219, rec 0.171, kl 0.039, g 0.009, w 0.023, d 0.829, lr: 0.0005736, consume 22.58s
+step 12000, loss 0.217, rec 0.170, kl 0.040, g 0.007, w 0.015, d 0.721, lr: 0.0005711, consume 92.52s
+step 12500, loss 0.222, rec 0.174, kl 0.040, g 0.009, w 0.034, d 0.908, lr: 0.0005685, consume 92.84s
+step 13000, loss 0.219, rec 0.171, kl 0.039, g 0.009, w 0.026, d 0.829, lr: 0.0005657, consume 92.84s
+    valid loss: 0.558, rec 0.162, kl 0.040, g 0.206, w 1.000, d 0.412, consume: 32.002s
+epoch: 6, consume: 393.822s
+step 13500, loss 0.218, rec 0.171, kl 0.039, g 0.008, w 0.018, d 0.765, lr: 0.0005629, consume 40.48s
+step 14000, loss 0.214, rec 0.168, kl 0.039, g 0.007, w 0.012, d 0.695, lr: 0.0005599, consume 92.23s
+step 14500, loss 0.218, rec 0.171, kl 0.039, g 0.008, w 0.023, d 0.786, lr: 0.0005569, consume 92.41s
+step 15000, loss 0.212, rec 0.166, kl 0.039, g 0.006, w 0.012, d 0.622, lr: 0.0005537, consume 92.53s
+    valid loss: 0.613, rec 0.172, kl 0.039, g 0.206, w 1.000, d 0.412, consume: 31.827s
+epoch: 7, consume: 391.748s
+step 15500, loss 0.216, rec 0.170, kl 0.039, g 0.007, w 0.018, d 0.817, lr: 0.0005504, consume 58.46s
+step 16000, loss 0.210, rec 0.165, kl 0.039, g 0.006, w 0.010, d 0.556, lr: 0.0005471, consume 92.66s
+step 16500, loss 0.216, rec 0.170, kl 0.039, g 0.007, w 0.022, d 0.816, lr: 0.0005436, consume 92.23s
+step 17000, loss 0.217, rec 0.171, kl 0.039, g 0.008, w 0.024, d 0.755, lr: 0.0005401, consume 92.33s
+    valid loss: 0.396, rec 0.166, kl 0.039, g 0.105, w 1.000, d 0.465, consume: 31.682s
+epoch: 8, consume: 391.820s
+step 17500, loss 0.214, rec 0.168, kl 0.039, g 0.007, w 0.015, d 0.760, lr: 0.0005364, consume 76.12s
+step 18000, loss 0.215, rec 0.168, kl 0.039, g 0.008, w 0.017, d 0.697, lr: 0.0005327, consume 92.31s
+step 18500, loss 0.213, rec 0.168, kl 0.039, g 0.006, w 0.013, d 0.724, lr: 0.0005289, consume 92.80s
+step 19000, loss 0.217, rec 0.170, kl 0.039, g 0.008, w 0.021, d 0.842, lr: 0.0005249, consume 92.74s
+    valid loss: 0.503, rec 0.164, kl 0.038, g 0.206, w 1.000, d 0.412, consume: 31.748s
+epoch: 9, consume: 392.131s
+step 19500, loss 0.211, rec 0.166, kl 0.039, g 0.006, w 0.013, d 0.659, lr: 0.0005209, consume 94.41s
+step 20000, loss 0.212, rec 0.166, kl 0.039, g 0.006, w 0.013, d 0.681, lr: 0.0005168, consume 92.51s
+step 20500, loss 0.216, rec 0.170, kl 0.039, g 0.007, w 0.020, d 0.837, lr: 0.0005127, consume 92.38s
+    valid loss: 0.526, rec 0.168, kl 0.039, g 0.206, w 1.000, d 0.412, consume: 31.811s
+100%|█████████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 17.96it/s]
+100%|█████████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 18.79it/s]
+FID:  95.95595459064918
+epoch: 10, consume: 424.608s
+step 21000, loss 0.210, rec 0.166, kl 0.039, g 0.005, w 0.014, d 0.814, lr: 0.0005084, consume 19.66s
+step 21500, loss 0.213, rec 0.168, kl 0.039, g 0.006, w 0.015, d 0.758, lr: 0.0005040, consume 92.33s
+step 22000, loss 0.215, rec 0.169, kl 0.039, g 0.007, w 0.018, d 0.823, lr: 0.0004996, consume 92.70s
+step 22500, loss 0.214, rec 0.168, kl 0.039, g 0.007, w 0.019, d 0.795, lr: 0.0004951, consume 92.26s
+    valid loss: 0.556, rec 0.164, kl 0.039, g 0.206, w 1.000, d 0.412, consume: 31.955s
+epoch: 11, consume: 391.857s
+step 23000, loss 0.209, rec 0.165, kl 0.039, g 0.005, w 0.012, d 0.671, lr: 0.0004906, consume 37.71s
+step 23500, loss 0.214, rec 0.168, kl 0.039, g 0.006, w 0.018, d 0.796, lr: 0.0004859, consume 92.44s
+step 24000, loss 0.211, rec 0.166, kl 0.039, g 0.006, w 0.013, d 0.740, lr: 0.0004812, consume 92.56s
+step 24500, loss 0.213, rec 0.167, kl 0.039, g 0.006, w 0.018, d 0.804, lr: 0.0004764, consume 92.47s
+    valid loss: 0.574, rec 0.162, kl 0.039, g 0.206, w 1.000, d 0.412, consume: 31.852s
+epoch: 12, consume: 392.857s
+step 25000, loss 0.213, rec 0.167, kl 0.039, g 0.007, w 0.015, d 0.830, lr: 0.0004716, consume 55.60s
+step 25500, loss 0.213, rec 0.167, kl 0.039, g 0.007, w 0.021, d 0.846, lr: 0.0004667, consume 92.45s
+step 26000, loss 0.213, rec 0.167, kl 0.040, g 0.006, w 0.018, d 0.800, lr: 0.0004617, consume 92.59s
+step 26500, loss 0.212, rec 0.166, kl 0.039, g 0.006, w 0.019, d 0.800, lr: 0.0004567, consume 92.24s
+    valid loss: 0.415, rec 0.165, kl 0.039, g 0.113, w 1.000, d 0.412, consume: 31.944s
+epoch: 13, consume: 391.939s
+step 27000, loss 0.216, rec 0.169, kl 0.039, g 0.007, w 0.024, d 0.922, lr: 0.0004516, consume 73.79s
+step 27500, loss 0.211, rec 0.165, kl 0.039, g 0.006, w 0.017, d 0.773, lr: 0.0004464, consume 92.44s
+step 28000, loss 0.210, rec 0.165, kl 0.040, g 0.006, w 0.015, d 0.755, lr: 0.0004412, consume 92.42s
+step 28500, loss 0.211, rec 0.166, kl 0.039, g 0.006, w 0.016, d 0.788, lr: 0.0004360, consume 92.82s
+    valid loss: 0.787, rec 0.171, kl 0.039, g 0.412, w 1.000, d 0.412, consume: 31.853s
+epoch: 14, consume: 392.588s
+step 29000, loss 0.216, rec 0.170, kl 0.039, g 0.007, w 0.025, d 0.900, lr: 0.0004307, consume 91.61s
+step 29500, loss 0.214, rec 0.167, kl 0.039, g 0.007, w 0.021, d 0.833, lr: 0.0004253, consume 92.33s
+step 30000, loss 0.211, rec 0.165, kl 0.040, g 0.006, w 0.017, d 0.800, lr: 0.0004200, consume 92.38s
+    valid loss: 0.839, rec 0.171, kl 0.039, g 0.412, w 1.000, d 0.412, consume: 31.919s
+100%|█████████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 17.97it/s]
+100%|█████████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 18.86it/s]
+FID:  111.35148677115279
+epoch: 15, consume: 424.596s
+step 30500, loss 0.211, rec 0.166, kl 0.039, g 0.006, w 0.015, d 0.816, lr: 0.0004145, consume 17.02s
+step 31000, loss 0.213, rec 0.167, kl 0.040, g 0.006, w 0.023, d 0.872, lr: 0.0004091, consume 92.70s
+step 31500, loss 0.211, rec 0.164, kl 0.040, g 0.006, w 0.018, d 0.795, lr: 0.0004036, consume 92.72s
+step 32000, loss 0.210, rec 0.164, kl 0.040, g 0.006, w 0.015, d 0.787, lr: 0.0003980, consume 92.32s
+    valid loss: 0.826, rec 0.167, kl 0.039, g 0.412, w 1.000, d 0.412, consume: 31.797s
+epoch: 16, consume: 392.389s
+step 32500, loss 0.212, rec 0.166, kl 0.040, g 0.006, w 0.020, d 0.928, lr: 0.0003925, consume 34.82s
+step 33000, loss 0.211, rec 0.165, kl 0.040, g 0.006, w 0.020, d 0.839, lr: 0.0003869, consume 92.40s
+step 33500, loss 0.210, rec 0.164, kl 0.040, g 0.006, w 0.018, d 0.835, lr: 0.0003813, consume 92.48s
+step 34000, loss 0.213, rec 0.166, kl 0.040, g 0.007, w 0.024, d 0.884, lr: 0.0003756, consume 92.55s
+    valid loss: 0.844, rec 0.163, kl 0.038, g 0.412, w 1.000, d 0.412, consume: 31.657s
+epoch: 17, consume: 392.131s
+step 34500, loss 0.209, rec 0.163, kl 0.040, g 0.006, w 0.016, d 0.840, lr: 0.0003700, consume 52.80s
+step 35000, loss 0.209, rec 0.163, kl 0.040, g 0.006, w 0.019, d 0.792, lr: 0.0003643, consume 92.38s
+step 35500, loss 0.212, rec 0.165, kl 0.040, g 0.007, w 0.025, d 0.909, lr: 0.0003586, consume 92.56s
+step 36000, loss 0.207, rec 0.161, kl 0.040, g 0.006, w 0.017, d 0.768, lr: 0.0003529, consume 92.24s
+    valid loss: 0.675, rec 0.166, kl 0.040, g 0.291, w 1.000, d 0.412, consume: 31.893s
+epoch: 18, consume: 391.904s
+step 36500, loss 0.208, rec 0.162, kl 0.040, g 0.006, w 0.017, d 0.848, lr: 0.0003472, consume 70.79s
+step 37000, loss 0.205, rec 0.159, kl 0.040, g 0.005, w 0.013, d 0.711, lr: 0.0003415, consume 92.76s
+step 37500, loss 0.209, rec 0.163, kl 0.040, g 0.006, w 0.020, d 0.898, lr: 0.0003357, consume 92.42s
+step 38000, loss 0.206, rec 0.160, kl 0.040, g 0.006, w 0.016, d 0.757, lr: 0.0003300, consume 92.93s
+    valid loss: 0.425, rec 0.160, kl 0.040, g 0.117, w 1.000, d 0.412, consume: 31.901s
+epoch: 19, consume: 392.820s
+step 38500, loss 0.204, rec 0.158, kl 0.041, g 0.005, w 0.012, d 0.652, lr: 0.0003243, consume 88.74s
+step 39000, loss 0.205, rec 0.160, kl 0.040, g 0.005, w 0.015, d 0.794, lr: 0.0003186, consume 92.59s
+step 39500, loss 0.207, rec 0.162, kl 0.040, g 0.005, w 0.015, d 0.833, lr: 0.0003128, consume 92.69s
+    valid loss: 0.720, rec 0.162, kl 0.039, g 0.412, w 1.000, d 0.412, consume: 31.654s
+100%|█████████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 17.98it/s]
+100%|█████████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 18.71it/s]
+FID:  83.13873876885083
+epoch: 20, consume: 425.301s
+step 40000, loss 0.207, rec 0.162, kl 0.040, g 0.005, w 0.017, d 0.931, lr: 0.0003071, consume 14.17s
+step 40500, loss 0.210, rec 0.163, kl 0.040, g 0.006, w 0.022, d 0.926, lr: 0.0003014, consume 92.89s
+step 41000, loss 0.207, rec 0.161, kl 0.041, g 0.005, w 0.015, d 0.794, lr: 0.0002957, consume 92.59s
+step 41500, loss 0.204, rec 0.158, kl 0.041, g 0.005, w 0.012, d 0.696, lr: 0.0002900, consume 92.35s
+    valid loss: 0.721, rec 0.152, kl 0.040, g 0.412, w 1.000, d 0.412, consume: 31.720s
+epoch: 21, consume: 392.352s
+step 42000, loss 0.199, rec 0.153, kl 0.041, g 0.005, w 0.010, d 0.455, lr: 0.0002844, consume 32.30s
+step 42500, loss 0.204, rec 0.159, kl 0.040, g 0.005, w 0.024, d 0.743, lr: 0.0002787, consume 92.53s
+step 43000, loss 0.203, rec 0.157, kl 0.041, g 0.005, w 0.010, d 0.667, lr: 0.0002731, consume 92.79s
+step 43500, loss 0.205, rec 0.160, kl 0.041, g 0.005, w 0.019, d 0.817, lr: 0.0002675, consume 92.65s
+    valid loss: 0.399, rec 0.153, kl 0.041, g 0.105, w 1.000, d 0.416, consume: 31.771s
+epoch: 22, consume: 392.836s
+step 44000, loss 0.205, rec 0.159, kl 0.041, g 0.005, w 0.013, d 0.767, lr: 0.0002620, consume 50.13s
+step 44500, loss 0.203, rec 0.158, kl 0.041, g 0.005, w 0.015, d 0.731, lr: 0.0002564, consume 92.73s
+step 45000, loss 0.203, rec 0.157, kl 0.041, g 0.005, w 0.013, d 0.705, lr: 0.0002509, consume 92.56s
+step 45500, loss 0.204, rec 0.158, kl 0.041, g 0.005, w 0.015, d 0.740, lr: 0.0002455, consume 92.57s
+    valid loss: 0.302, rec 0.163, kl 0.041, g 0.052, w 1.000, d 0.412, consume: 31.822s
+epoch: 23, consume: 392.527s
+step 46000, loss 0.206, rec 0.161, kl 0.041, g 0.005, w 0.023, d 0.845, lr: 0.0002401, consume 68.04s
+step 46500, loss 0.208, rec 0.162, kl 0.041, g 0.005, w 0.019, d 0.906, lr: 0.0002347, consume 92.74s
+step 47000, loss 0.205, rec 0.159, kl 0.041, g 0.005, w 0.015, d 0.765, lr: 0.0002293, consume 92.55s
+step 47500, loss 0.202, rec 0.157, kl 0.041, g 0.005, w 0.013, d 0.651, lr: 0.0002240, consume 92.50s
+    valid loss: 0.748, rec 0.161, kl 0.040, g 0.412, w 1.000, d 0.412, consume: 31.813s
+epoch: 24, consume: 392.451s
+step 48000, loss 0.202, rec 0.157, kl 0.041, g 0.005, w 0.011, d 0.707, lr: 0.0002188, consume 86.07s
+step 48500, loss 0.206, rec 0.160, kl 0.041, g 0.005, w 0.018, d 0.859, lr: 0.0002136, consume 92.62s
+step 49000, loss 0.204, rec 0.158, kl 0.041, g 0.005, w 0.016, d 0.731, lr: 0.0002085, consume 92.95s
+    valid loss: 0.866, rec 0.158, kl 0.041, g 0.412, w 1.000, d 0.412, consume: 31.760s
+100%|█████████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 17.78it/s]
+100%|█████████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 18.69it/s]
+FID:  73.74116976795443
+epoch: 25, consume: 425.923s
+step 49500, loss 0.203, rec 0.158, kl 0.041, g 0.004, w 0.008, d 0.617, lr: 0.0002034, consume 11.50s
+step 50000, loss 0.203, rec 0.158, kl 0.041, g 0.004, w 0.013, d 0.774, lr: 0.0001983, consume 92.36s
+step 50500, loss 0.203, rec 0.158, kl 0.041, g 0.004, w 0.012, d 0.734, lr: 0.0001934, consume 92.65s
+step 51000, loss 0.203, rec 0.158, kl 0.041, g 0.004, w 0.016, d 0.801, lr: 0.0001884, consume 92.88s
+    valid loss: 0.707, rec 0.163, kl 0.040, g 0.412, w 1.000, d 0.412, consume: 31.919s
+epoch: 26, consume: 392.763s
+step 51500, loss 0.203, rec 0.158, kl 0.041, g 0.004, w 0.016, d 0.804, lr: 0.0001836, consume 29.42s
+step 52000, loss 0.204, rec 0.159, kl 0.041, g 0.005, w 0.016, d 0.790, lr: 0.0001788, consume 92.55s
+step 52500, loss 0.204, rec 0.159, kl 0.041, g 0.004, w 0.014, d 0.754, lr: 0.0001741, consume 92.78s
+step 53000, loss 0.201, rec 0.156, kl 0.041, g 0.005, w 0.011, d 0.628, lr: 0.0001695, consume 92.51s
+    valid loss: 0.592, rec 0.158, kl 0.040, g 0.206, w 1.000, d 0.412, consume: 31.667s
+epoch: 27, consume: 392.499s
+step 53500, loss 0.203, rec 0.158, kl 0.041, g 0.004, w 0.015, d 0.797, lr: 0.0001649, consume 47.27s
+step 54000, loss 0.203, rec 0.157, kl 0.041, g 0.005, w 0.017, d 0.737, lr: 0.0001604, consume 92.62s
+step 54500, loss 0.202, rec 0.157, kl 0.041, g 0.005, w 0.013, d 0.751, lr: 0.0001560, consume 92.58s
+step 55000, loss 0.204, rec 0.158, kl 0.041, g 0.005, w 0.017, d 0.796, lr: 0.0001516, consume 92.59s
+    valid loss: 0.747, rec 0.156, kl 0.040, g 0.412, w 1.000, d 0.412, consume: 31.854s
+epoch: 28, consume: 392.797s
+step 55500, loss 0.203, rec 0.158, kl 0.041, g 0.004, w 0.016, d 0.761, lr: 0.0001474, consume 65.23s
+step 56000, loss 0.202, rec 0.156, kl 0.041, g 0.005, w 0.011, d 0.736, lr: 0.0001432, consume 92.44s
+step 56500, loss 0.203, rec 0.158, kl 0.041, g 0.004, w 0.020, d 0.795, lr: 0.0001391, consume 92.60s
+step 57000, loss 0.201, rec 0.155, kl 0.041, g 0.005, w 0.012, d 0.649, lr: 0.0001351, consume 92.57s
+    valid loss: 0.661, rec 0.156, kl 0.041, g 0.238, w 1.000, d 0.412, consume: 31.851s
+epoch: 29, consume: 392.260s
+step 57500, loss 0.202, rec 0.157, kl 0.041, g 0.005, w 0.014, d 0.736, lr: 0.0001312, consume 83.68s
+step 58000, loss 0.203, rec 0.157, kl 0.041, g 0.005, w 0.021, d 0.729, lr: 0.0001273, consume 92.41s
+step 58500, loss 0.201, rec 0.156, kl 0.041, g 0.005, w 0.011, d 0.683, lr: 0.0001236, consume 92.76s
+    valid loss: 0.468, rec 0.160, kl 0.040, g 0.206, w 1.000, d 0.412, consume: 31.784s
+100%|█████████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 18.01it/s]
+100%|█████████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 18.70it/s]
+FID:  68.54643190608718
+epoch: 30, consume: 425.283s
+step 59000, loss 0.211, rec 0.166, kl 0.042, g 0.003, w 0.119, d 0.705, lr: 0.0001199, consume 8.69s
+step 59500, loss 0.201, rec 0.155, kl 0.041, g 0.004, w 0.012, d 0.617, lr: 0.0001164, consume 92.21s
+step 60000, loss 0.201, rec 0.156, kl 0.041, g 0.004, w 0.014, d 0.724, lr: 0.0001129, consume 92.55s
+step 60500, loss 0.201, rec 0.156, kl 0.041, g 0.004, w 0.012, d 0.671, lr: 0.0001096, consume 92.45s
+    valid loss: 0.331, rec 0.157, kl 0.041, g 0.103, w 1.000, d 0.412, consume: 31.857s
+epoch: 31, consume: 391.933s
+step 61000, loss 0.201, rec 0.156, kl 0.041, g 0.004, w 0.011, d 0.693, lr: 0.0001063, consume 26.83s
+step 61500, loss 0.200, rec 0.154, kl 0.041, g 0.004, w 0.010, d 0.644, lr: 0.0001031, consume 92.94s
+step 62000, loss 0.200, rec 0.155, kl 0.041, g 0.004, w 0.012, d 0.623, lr: 0.0001001, consume 92.47s
+step 62500, loss 0.200, rec 0.155, kl 0.041, g 0.004, w 0.010, d 0.667, lr: 0.0000971, consume 92.56s
+    valid loss: 0.574, rec 0.159, kl 0.040, g 0.206, w 1.000, d 0.412, consume: 31.888s
+epoch: 32, consume: 392.915s
+step 63000, loss 0.198, rec 0.153, kl 0.041, g 0.004, w 0.008, d 0.591, lr: 0.0000943, consume 44.39s
+step 63500, loss 0.199, rec 0.154, kl 0.041, g 0.004, w 0.010, d 0.576, lr: 0.0000915, consume 92.46s
+step 64000, loss 0.200, rec 0.155, kl 0.041, g 0.004, w 0.020, d 0.685, lr: 0.0000889, consume 92.91s
+step 64500, loss 0.200, rec 0.155, kl 0.041, g 0.004, w 0.012, d 0.694, lr: 0.0000864, consume 92.81s
+    valid loss: 0.640, rec 0.157, kl 0.040, g 0.213, w 1.000, d 0.412, consume: 31.883s
+epoch: 33, consume: 392.769s
+step 65000, loss 0.199, rec 0.154, kl 0.041, g 0.004, w 0.009, d 0.614, lr: 0.0000840, consume 62.65s
+step 65500, loss 0.198, rec 0.153, kl 0.041, g 0.004, w 0.011, d 0.569, lr: 0.0000817, consume 92.42s
+step 66000, loss 0.199, rec 0.154, kl 0.041, g 0.004, w 0.011, d 0.623, lr: 0.0000795, consume 92.56s
+step 66500, loss 0.199, rec 0.153, kl 0.041, g 0.004, w 0.009, d 0.556, lr: 0.0000774, consume 92.46s
+    valid loss: 0.805, rec 0.156, kl 0.040, g 0.412, w 1.000, d 0.412, consume: 31.937s
+epoch: 34, consume: 392.430s
+step 67000, loss 0.200, rec 0.155, kl 0.041, g 0.004, w 0.014, d 0.674, lr: 0.0000754, consume 80.33s
+step 67500, loss 0.199, rec 0.154, kl 0.041, g 0.004, w 0.011, d 0.627, lr: 0.0000736, consume 92.87s
+step 68000, loss 0.199, rec 0.154, kl 0.041, g 0.004, w 0.018, d 0.660, lr: 0.0000718, consume 92.53s
+step 68500, loss 0.201, rec 0.156, kl 0.041, g 0.004, w 0.019, d 0.758, lr: 0.0000702, consume 92.55s
+    valid loss: 0.762, rec 0.155, kl 0.040, g 0.412, w 1.000, d 0.412, consume: 31.872s
+100%|█████████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 17.65it/s]
+100%|█████████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 18.51it/s]
+FID:  64.36996132286714
+epoch: 35, consume: 424.641s
+step 69000, loss 0.199, rec 0.154, kl 0.041, g 0.004, w 0.019, d 0.607, lr: 0.0000687, consume 98.00s
+step 69500, loss 0.198, rec 0.153, kl 0.041, g 0.004, w 0.010, d 0.586, lr: 0.0000673, consume 92.41s
+step 70000, loss 0.200, rec 0.155, kl 0.041, g 0.004, w 0.014, d 0.660, lr: 0.0000661, consume 92.62s
+    valid loss: 0.894, rec 0.155, kl 0.041, g 0.412, w 1.000, d 0.412, consume: 32.036s
+epoch: 36, consume: 392.131s
+step 70500, loss 0.200, rec 0.155, kl 0.041, g 0.004, w 0.018, d 0.711, lr: 0.0000649, consume 24.26s
+step 71000, loss 0.199, rec 0.154, kl 0.041, g 0.004, w 0.012, d 0.623, lr: 0.0000639, consume 92.46s
+step 71500, loss 0.199, rec 0.154, kl 0.041, g 0.004, w 0.017, d 0.654, lr: 0.0000630, consume 92.56s
+step 72000, loss 0.199, rec 0.154, kl 0.041, g 0.004, w 0.010, d 0.625, lr: 0.0000622, consume 92.50s
+    valid loss: 0.533, rec 0.154, kl 0.040, g 0.206, w 1.000, d 0.412, consume: 31.758s
+epoch: 37, consume: 392.519s
+step 72500, loss 0.199, rec 0.154, kl 0.041, g 0.004, w 0.014, d 0.574, lr: 0.0000615, consume 41.87s
+step 73000, loss 0.199, rec 0.154, kl 0.041, g 0.004, w 0.012, d 0.605, lr: 0.0000610, consume 92.38s
+step 73500, loss 0.198, rec 0.153, kl 0.041, g 0.004, w 0.013, d 0.603, lr: 0.0000605, consume 92.97s
+step 74000, loss 0.198, rec 0.153, kl 0.041, g 0.004, w 0.011, d 0.550, lr: 0.0000602, consume 92.62s
+    valid loss: 0.713, rec 0.157, kl 0.041, g 0.412, w 1.000, d 0.412, consume: 31.769s
+epoch: 38, consume: 392.769s
+step 74500, loss 0.199, rec 0.154, kl 0.041, g 0.004, w 0.008, d 0.608, lr: 0.0000601, consume 59.76s
+step 75000, loss 0.197, rec 0.152, kl 0.041, g 0.004, w 0.008, d 0.453, lr: 0.0000600, consume 92.40s
+    valid loss: 0.956, rec 0.155, kl 0.041, g 0.412, w 1.000, d 0.412, consume: 31.066s
+epoch: 39, consume: 184.068s
+100%|█████████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 17.71it/s]
+100%|█████████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 18.37it/s]
+FID:  62.36840595638466

@@ -1,0 +1,411 @@
+ImprovedVAE_Config()
+	batch_size: 32
+	beta1: 0.9
+	beta2: 0.95
+	channels: [64, 64, 128, 256, 256]
+	crop_size: 176
+	gpu_num: 3
+	grad_clip: 1.0
+	gradient_accumulation_steps: 1
+	img_size: 176
+	kl_weight: 0.0005
+	layers: [3, 3, 3, 3]
+	learning_rate: 0.0006
+	lr_decay_iters: 56000
+	max_iters: 56000
+	min_lr: 6e-05
+	num_epoch: 30
+	warmup_iters: 1000
+	weight_decay: 0.0
+	z_channel: 8
+
+total_params: 21.81M, encoder_params: 10.61M, decoder_params: 11.20M
+step 500, loss 1.323, rec_loss 0.270, kl_loss 1.053, lr: 0.0002994, consume 163.01s
+step 1000, loss 0.235, rec_loss 0.190, kl_loss 0.044, lr: 0.0005994, consume 91.32s
+step 1500, loss 0.222, rec_loss 0.178, kl_loss 0.044, lr: 0.0005999, consume 91.48s
+    valid loss: 0.209, rec_loss 0.163, kl_loss 0.046, consume: 57.002s
+epoch: 0, consume: 477.335s
+step 2000, loss 0.210, rec_loss 0.166, kl_loss 0.043, lr: 0.0005996, consume 25.20s
+step 2500, loss 0.209, rec_loss 0.166, kl_loss 0.044, lr: 0.0005990, consume 93.00s
+step 3000, loss 0.206, rec_loss 0.163, kl_loss 0.043, lr: 0.0005982, consume 91.74s
+step 3500, loss 0.203, rec_loss 0.160, kl_loss 0.043, lr: 0.0005973, consume 91.79s
+    valid loss: 0.200, rec_loss 0.158, kl_loss 0.042, consume: 30.056s
+epoch: 1, consume: 388.640s
+step 4000, loss 0.201, rec_loss 0.158, kl_loss 0.043, lr: 0.0005960, consume 42.82s
+step 4500, loss 0.199, rec_loss 0.157, kl_loss 0.042, lr: 0.0005946, consume 91.51s
+step 5000, loss 0.197, rec_loss 0.155, kl_loss 0.042, lr: 0.0005930, consume 91.23s
+step 5500, loss 0.197, rec_loss 0.155, kl_loss 0.042, lr: 0.0005911, consume 91.91s
+    valid loss: 0.194, rec_loss 0.153, kl_loss 0.041, consume: 30.118s
+epoch: 2, consume: 386.697s
+step 6000, loss 0.195, rec_loss 0.153, kl_loss 0.042, lr: 0.0005891, consume 60.20s
+step 6500, loss 0.193, rec_loss 0.152, kl_loss 0.041, lr: 0.0005868, consume 91.31s
+step 7000, loss 0.193, rec_loss 0.152, kl_loss 0.041, lr: 0.0005843, consume 91.24s
+step 7500, loss 0.192, rec_loss 0.151, kl_loss 0.041, lr: 0.0005816, consume 91.02s
+    valid loss: 0.190, rec_loss 0.149, kl_loss 0.041, consume: 30.000s
+epoch: 3, consume: 384.980s
+step 8000, loss 0.190, rec_loss 0.150, kl_loss 0.040, lr: 0.0005787, consume 77.80s
+step 8500, loss 0.189, rec_loss 0.149, kl_loss 0.040, lr: 0.0005756, consume 91.76s
+step 9000, loss 0.189, rec_loss 0.149, kl_loss 0.040, lr: 0.0005723, consume 91.65s
+step 9500, loss 0.187, rec_loss 0.148, kl_loss 0.040, lr: 0.0005688, consume 91.84s
+    valid loss: 0.187, rec_loss 0.148, kl_loss 0.039, consume: 29.991s
+epoch: 4, consume: 386.631s
+step 10000, loss 0.188, rec_loss 0.148, kl_loss 0.040, lr: 0.0005651, consume 95.79s
+step 10500, loss 0.187, rec_loss 0.147, kl_loss 0.039, lr: 0.0005612, consume 91.41s
+step 11000, loss 0.185, rec_loss 0.146, kl_loss 0.039, lr: 0.0005571, consume 90.98s
+    valid loss: 0.184, rec_loss 0.146, kl_loss 0.038, consume: 30.026s
+epoch: 5, consume: 385.356s
+step 11500, loss 0.185, rec_loss 0.146, kl_loss 0.039, lr: 0.0005529, consume 22.56s
+step 12000, loss 0.185, rec_loss 0.146, kl_loss 0.039, lr: 0.0005484, consume 91.73s
+step 12500, loss 0.184, rec_loss 0.145, kl_loss 0.039, lr: 0.0005438, consume 91.73s
+step 13000, loss 0.183, rec_loss 0.145, kl_loss 0.039, lr: 0.0005390, consume 92.33s
+    valid loss: 0.185, rec_loss 0.147, kl_loss 0.038, consume: 30.532s
+epoch: 6, consume: 388.685s
+step 13500, loss 0.183, rec_loss 0.144, kl_loss 0.039, lr: 0.0005341, consume 40.39s
+step 14000, loss 0.182, rec_loss 0.144, kl_loss 0.039, lr: 0.0005289, consume 92.03s
+step 14500, loss 0.182, rec_loss 0.143, kl_loss 0.038, lr: 0.0005236, consume 91.81s
+step 15000, loss 0.181, rec_loss 0.143, kl_loss 0.038, lr: 0.0005182, consume 92.28s
+    valid loss: 0.180, rec_loss 0.142, kl_loss 0.038, consume: 30.377s
+epoch: 7, consume: 388.807s
+step 15500, loss 0.181, rec_loss 0.143, kl_loss 0.038, lr: 0.0005126, consume 58.10s
+step 16000, loss 0.181, rec_loss 0.142, kl_loss 0.038, lr: 0.0005068, consume 91.96s
+step 16500, loss 0.180, rec_loss 0.142, kl_loss 0.038, lr: 0.0005009, consume 91.81s
+step 17000, loss 0.180, rec_loss 0.142, kl_loss 0.038, lr: 0.0004949, consume 92.40s
+    valid loss: 0.180, rec_loss 0.141, kl_loss 0.039, consume: 30.358s
+epoch: 8, consume: 388.878s
+step 17500, loss 0.180, rec_loss 0.141, kl_loss 0.038, lr: 0.0004887, consume 75.94s
+step 18000, loss 0.180, rec_loss 0.141, kl_loss 0.038, lr: 0.0004824, consume 91.77s
+step 18500, loss 0.179, rec_loss 0.141, kl_loss 0.038, lr: 0.0004760, consume 92.08s
+step 19000, loss 0.179, rec_loss 0.140, kl_loss 0.038, lr: 0.0004694, consume 92.58s
+    valid loss: 0.179, rec_loss 0.141, kl_loss 0.038, consume: 30.552s
+epoch: 9, consume: 389.313s
+step 19500, loss 0.178, rec_loss 0.140, kl_loss 0.038, lr: 0.0004628, consume 94.03s
+step 20000, loss 0.178, rec_loss 0.139, kl_loss 0.038, lr: 0.0004560, consume 92.04s
+step 20500, loss 0.178, rec_loss 0.139, kl_loss 0.038, lr: 0.0004491, consume 92.06s
+    valid loss: 0.178, rec_loss 0.140, kl_loss 0.038, consume: 30.174s
+epoch: 10, consume: 389.626s
+step 21000, loss 0.177, rec_loss 0.139, kl_loss 0.038, lr: 0.0004422, consume 19.56s
+step 21500, loss 0.177, rec_loss 0.139, kl_loss 0.038, lr: 0.0004351, consume 91.19s
+step 22000, loss 0.177, rec_loss 0.138, kl_loss 0.038, lr: 0.0004280, consume 91.22s
+step 22500, loss 0.177, rec_loss 0.138, kl_loss 0.038, lr: 0.0004207, consume 91.37s
+    valid loss: 0.176, rec_loss 0.139, kl_loss 0.037, consume: 30.004s
+epoch: 11, consume: 385.594s
+step 23000, loss 0.176, rec_loss 0.138, kl_loss 0.038, lr: 0.0004134, consume 37.84s
+step 23500, loss 0.177, rec_loss 0.138, kl_loss 0.038, lr: 0.0004061, consume 91.20s
+step 24000, loss 0.176, rec_loss 0.138, kl_loss 0.038, lr: 0.0003987, consume 91.31s
+step 24500, loss 0.176, rec_loss 0.137, kl_loss 0.038, lr: 0.0003912, consume 91.43s
+    valid loss: 0.176, rec_loss 0.138, kl_loss 0.038, consume: 30.127s
+epoch: 12, consume: 386.464s
+step 25000, loss 0.176, rec_loss 0.137, kl_loss 0.038, lr: 0.0003836, consume 54.91s
+step 25500, loss 0.175, rec_loss 0.137, kl_loss 0.038, lr: 0.0003761, consume 92.13s
+step 26000, loss 0.175, rec_loss 0.137, kl_loss 0.038, lr: 0.0003684, consume 92.04s
+step 26500, loss 0.175, rec_loss 0.136, kl_loss 0.038, lr: 0.0003608, consume 92.13s
+    valid loss: 0.176, rec_loss 0.138, kl_loss 0.037, consume: 30.276s
+epoch: 13, consume: 388.414s
+step 27000, loss 0.175, rec_loss 0.136, kl_loss 0.038, lr: 0.0003531, consume 73.29s
+step 27500, loss 0.174, rec_loss 0.136, kl_loss 0.038, lr: 0.0003454, consume 92.57s
+step 28000, loss 0.174, rec_loss 0.136, kl_loss 0.038, lr: 0.0003377, consume 92.26s
+step 28500, loss 0.174, rec_loss 0.136, kl_loss 0.038, lr: 0.0003300, consume 92.25s
+    valid loss: 0.175, rec_loss 0.138, kl_loss 0.038, consume: 30.509s
+epoch: 14, consume: 390.027s
+step 29000, loss 0.174, rec_loss 0.136, kl_loss 0.038, lr: 0.0003223, consume 91.21s
+step 29500, loss 0.174, rec_loss 0.135, kl_loss 0.038, lr: 0.0003146, consume 91.66s
+step 30000, loss 0.173, rec_loss 0.135, kl_loss 0.038, lr: 0.0003069, consume 91.21s
+    valid loss: 0.174, rec_loss 0.136, kl_loss 0.038, consume: 29.849s
+epoch: 15, consume: 386.457s
+step 30500, loss 0.174, rec_loss 0.136, kl_loss 0.038, lr: 0.0002992, consume 16.69s
+step 31000, loss 0.174, rec_loss 0.136, kl_loss 0.038, lr: 0.0002916, consume 90.84s
+step 31500, loss 0.173, rec_loss 0.135, kl_loss 0.038, lr: 0.0002840, consume 91.33s
+step 32000, loss 0.173, rec_loss 0.134, kl_loss 0.038, lr: 0.0002764, consume 91.02s
+    valid loss: 0.173, rec_loss 0.135, kl_loss 0.038, consume: 30.065s
+epoch: 16, consume: 384.875s
+step 32500, loss 0.172, rec_loss 0.134, kl_loss 0.038, lr: 0.0002689, consume 34.44s
+step 33000, loss 0.172, rec_loss 0.134, kl_loss 0.038, lr: 0.0002614, consume 90.99s
+step 33500, loss 0.173, rec_loss 0.134, kl_loss 0.038, lr: 0.0002539, consume 91.43s
+step 34000, loss 0.173, rec_loss 0.134, kl_loss 0.038, lr: 0.0002466, consume 91.04s
+    valid loss: 0.173, rec_loss 0.136, kl_loss 0.038, consume: 29.946s
+epoch: 17, consume: 384.896s
+step 34500, loss 0.172, rec_loss 0.134, kl_loss 0.038, lr: 0.0002393, consume 52.31s
+step 35000, loss 0.172, rec_loss 0.134, kl_loss 0.038, lr: 0.0002321, consume 91.50s
+step 35500, loss 0.172, rec_loss 0.133, kl_loss 0.038, lr: 0.0002249, consume 91.96s
+step 36000, loss 0.172, rec_loss 0.134, kl_loss 0.038, lr: 0.0002179, consume 91.46s
+    valid loss: 0.172, rec_loss 0.134, kl_loss 0.038, consume: 30.084s
+epoch: 18, consume: 386.802s
+step 36500, loss 0.171, rec_loss 0.133, kl_loss 0.038, lr: 0.0002109, consume 69.85s
+step 37000, loss 0.171, rec_loss 0.133, kl_loss 0.038, lr: 0.0002040, consume 91.53s
+step 37500, loss 0.172, rec_loss 0.133, kl_loss 0.038, lr: 0.0001972, consume 91.32s
+step 38000, loss 0.171, rec_loss 0.133, kl_loss 0.038, lr: 0.0001906, consume 91.77s
+    valid loss: 0.172, rec_loss 0.134, kl_loss 0.038, consume: 30.286s
+epoch: 19, consume: 386.561s
+step 38500, loss 0.171, rec_loss 0.133, kl_loss 0.038, lr: 0.0001840, consume 87.49s
+step 39000, loss 0.171, rec_loss 0.133, kl_loss 0.038, lr: 0.0001776, consume 91.26s
+step 39500, loss 0.171, rec_loss 0.133, kl_loss 0.038, lr: 0.0001713, consume 91.59s
+    valid loss: 0.171, rec_loss 0.134, kl_loss 0.038, consume: 30.042s
+epoch: 20, consume: 386.111s
+step 40000, loss 0.170, rec_loss 0.132, kl_loss 0.038, lr: 0.0001651, consume 14.17s
+step 40500, loss 0.171, rec_loss 0.132, kl_loss 0.038, lr: 0.0001591, consume 91.22s
+step 41000, loss 0.171, rec_loss 0.133, kl_loss 0.038, lr: 0.0001532, consume 91.25s
+step 41500, loss 0.170, rec_loss 0.132, kl_loss 0.038, lr: 0.0001474, consume 91.53s
+    valid loss: 0.171, rec_loss 0.133, kl_loss 0.038, consume: 30.203s
+epoch: 21, consume: 386.494s
+step 42000, loss 0.171, rec_loss 0.132, kl_loss 0.038, lr: 0.0001418, consume 32.02s
+step 42500, loss 0.171, rec_loss 0.132, kl_loss 0.038, lr: 0.0001364, consume 92.03s
+step 43000, loss 0.170, rec_loss 0.132, kl_loss 0.038, lr: 0.0001311, consume 92.17s
+step 43500, loss 0.171, rec_loss 0.132, kl_loss 0.038, lr: 0.0001260, consume 91.99s
+    valid loss: 0.171, rec_loss 0.133, kl_loss 0.038, consume: 30.226s
+epoch: 22, consume: 388.810s
+step 44000, loss 0.170, rec_loss 0.132, kl_loss 0.038, lr: 0.0001210, consume 50.66s
+step 44500, loss 0.170, rec_loss 0.132, kl_loss 0.038, lr: 0.0001162, consume 92.00s
+step 45000, loss 0.170, rec_loss 0.132, kl_loss 0.038, lr: 0.0001116, consume 91.96s
+step 45500, loss 0.170, rec_loss 0.132, kl_loss 0.038, lr: 0.0001071, consume 91.96s
+    valid loss: 0.170, rec_loss 0.133, kl_loss 0.038, consume: 30.329s
+epoch: 23, consume: 389.374s
+step 46000, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0001029, consume 68.11s
+step 46500, loss 0.170, rec_loss 0.131, kl_loss 0.038, lr: 0.0000988, consume 92.12s
+step 47000, loss 0.170, rec_loss 0.131, kl_loss 0.038, lr: 0.0000949, consume 91.89s
+step 47500, loss 0.170, rec_loss 0.131, kl_loss 0.038, lr: 0.0000912, consume 91.72s
+    valid loss: 0.171, rec_loss 0.134, kl_loss 0.037, consume: 30.377s
+epoch: 24, consume: 388.826s
+step 48000, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0000877, consume 85.73s
+step 48500, loss 0.170, rec_loss 0.131, kl_loss 0.038, lr: 0.0000844, consume 91.37s
+step 49000, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0000813, consume 91.06s
+    valid loss: 0.170, rec_loss 0.132, kl_loss 0.038, consume: 29.955s
+epoch: 25, consume: 386.009s
+step 49500, loss 0.170, rec_loss 0.131, kl_loss 0.038, lr: 0.0000784, consume 11.29s
+step 50000, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0000757, consume 90.99s
+step 50500, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0000732, consume 91.51s
+step 51000, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0000709, consume 91.99s
+    valid loss: 0.170, rec_loss 0.133, kl_loss 0.038, consume: 30.351s
+epoch: 26, consume: 387.118s
+step 51500, loss 0.169, rec_loss 0.130, kl_loss 0.038, lr: 0.0000689, consume 29.36s
+step 52000, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0000670, consume 91.82s
+step 52500, loss 0.170, rec_loss 0.131, kl_loss 0.038, lr: 0.0000654, consume 92.40s
+step 53000, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0000640, consume 91.46s
+    valid loss: 0.169, rec_loss 0.132, kl_loss 0.038, consume: 30.174s
+epoch: 27, consume: 388.037s
+step 53500, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0000628, consume 46.62s
+step 54000, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0000618, consume 90.93s
+step 54500, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0000610, consume 91.45s
+step 55000, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0000604, consume 91.07s
+    valid loss: 0.170, rec_loss 0.132, kl_loss 0.038, consume: 30.099s
+epoch: 28, consume: 385.067s
+step 55500, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0000601, consume 64.53s
+step 56000, loss 0.169, rec_loss 0.130, kl_loss 0.038, lr: 0.0000600, consume 91.04s
+    valid loss: 0.170, rec_loss 0.132, kl_loss 0.038, consume: 29.255s
+epoch: 29, consume: 185.686s
+
+
+
+ImprovedVAE_Config()
+	batch_size: 32
+	beta1: 0.9
+	beta2: 0.95
+	channels: [64, 64, 128, 256, 256]
+	crop_size: 176
+	gpu_num: 3
+	grad_clip: 1.0
+	gradient_accumulation_steps: 1
+	img_size: 176
+	kl_weight: 0.0005
+	layers: [3, 3, 3, 3]
+	learning_rate: 0.0006
+	lr_decay_iters: 56000
+	max_iters: 56000
+	min_lr: 6e-05
+	num_epoch: 30
+	warmup_iters: 1000
+	weight_decay: 0.0
+	z_channel: 8
+
+total_params: 20.72M, encoder_params: 10.61M, decoder_params: 10.12M
+step 500, loss 2.887, rec_loss 0.259, kl_loss 2.629, lr: 0.0002994, consume 163.80s
+step 1000, loss 0.232, rec_loss 0.186, kl_loss 0.045, lr: 0.0005994, consume 88.19s
+step 1500, loss 0.220, rec_loss 0.175, kl_loss 0.044, lr: 0.0005999, consume 88.59s
+    valid loss: 0.205, rec_loss 0.161, kl_loss 0.044, consume: 47.743s
+100%|████████████████████████████████████████████████████████████| 398/398 [00:20<00:00, 19.11it/s]
+100%|████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 18.94it/s]
+FID:  147.52216186068443
+epoch: 0, consume: 511.328s
+step 2000, loss 0.206, rec_loss 0.163, kl_loss 0.043, lr: 0.0005996, consume 24.95s
+step 2500, loss 0.206, rec_loss 0.164, kl_loss 0.043, lr: 0.0005990, consume 88.90s
+step 3000, loss 0.202, rec_loss 0.161, kl_loss 0.042, lr: 0.0005982, consume 88.82s
+step 3500, loss 0.199, rec_loss 0.158, kl_loss 0.041, lr: 0.0005973, consume 88.99s
+    valid loss: 0.196, rec_loss 0.155, kl_loss 0.041, consume: 28.823s
+epoch: 1, consume: 375.700s
+step 4000, loss 0.196, rec_loss 0.155, kl_loss 0.041, lr: 0.0005960, consume 42.02s
+step 4500, loss 0.195, rec_loss 0.155, kl_loss 0.040, lr: 0.0005946, consume 89.14s
+step 5000, loss 0.193, rec_loss 0.153, kl_loss 0.040, lr: 0.0005930, consume 88.93s
+step 5500, loss 0.192, rec_loss 0.152, kl_loss 0.040, lr: 0.0005911, consume 88.96s
+    valid loss: 0.192, rec_loss 0.153, kl_loss 0.039, consume: 28.643s
+epoch: 2, consume: 375.760s
+step 6000, loss 0.191, rec_loss 0.151, kl_loss 0.040, lr: 0.0005891, consume 59.25s
+step 6500, loss 0.189, rec_loss 0.150, kl_loss 0.039, lr: 0.0005868, consume 89.10s
+step 7000, loss 0.189, rec_loss 0.150, kl_loss 0.039, lr: 0.0005843, consume 89.12s
+step 7500, loss 0.189, rec_loss 0.150, kl_loss 0.039, lr: 0.0005816, consume 89.00s
+    valid loss: 0.189, rec_loss 0.149, kl_loss 0.040, consume: 28.787s
+epoch: 3, consume: 376.008s
+step 8000, loss 0.187, rec_loss 0.148, kl_loss 0.039, lr: 0.0005787, consume 76.57s
+step 8500, loss 0.187, rec_loss 0.148, kl_loss 0.039, lr: 0.0005756, consume 89.32s
+step 9000, loss 0.187, rec_loss 0.148, kl_loss 0.039, lr: 0.0005723, consume 89.32s
+step 9500, loss 0.185, rec_loss 0.146, kl_loss 0.039, lr: 0.0005688, consume 89.10s
+    valid loss: 0.184, rec_loss 0.145, kl_loss 0.039, consume: 28.497s
+epoch: 4, consume: 376.365s
+step 10000, loss 0.185, rec_loss 0.147, kl_loss 0.039, lr: 0.0005651, consume 93.83s
+step 10500, loss 0.185, rec_loss 0.146, kl_loss 0.039, lr: 0.0005612, consume 89.18s
+step 11000, loss 0.184, rec_loss 0.145, kl_loss 0.038, lr: 0.0005571, consume 89.01s
+    valid loss: 0.183, rec_loss 0.145, kl_loss 0.038, consume: 28.585s
+100%|████████████████████████████████████████████████████████████| 398/398 [00:21<00:00, 18.93it/s]
+100%|████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 19.10it/s]
+FID:  143.16597431718031
+epoch: 5, consume: 427.157s
+step 11500, loss 0.183, rec_loss 0.144, kl_loss 0.039, lr: 0.0005529, consume 21.99s
+step 12000, loss 0.183, rec_loss 0.144, kl_loss 0.038, lr: 0.0005484, consume 88.45s
+step 12500, loss 0.182, rec_loss 0.144, kl_loss 0.038, lr: 0.0005438, consume 88.48s
+step 13000, loss 0.182, rec_loss 0.143, kl_loss 0.038, lr: 0.0005390, consume 88.27s
+    valid loss: 0.183, rec_loss 0.144, kl_loss 0.039, consume: 28.136s
+epoch: 6, consume: 373.158s
+step 13500, loss 0.182, rec_loss 0.144, kl_loss 0.038, lr: 0.0005341, consume 38.81s
+step 14000, loss 0.181, rec_loss 0.143, kl_loss 0.038, lr: 0.0005289, consume 88.25s
+step 14500, loss 0.181, rec_loss 0.142, kl_loss 0.038, lr: 0.0005236, consume 88.53s
+step 15000, loss 0.180, rec_loss 0.142, kl_loss 0.038, lr: 0.0005182, consume 88.32s
+    valid loss: 0.179, rec_loss 0.141, kl_loss 0.038, consume: 28.372s
+epoch: 7, consume: 372.707s
+step 15500, loss 0.180, rec_loss 0.141, kl_loss 0.038, lr: 0.0005126, consume 56.29s
+step 16000, loss 0.179, rec_loss 0.141, kl_loss 0.038, lr: 0.0005068, consume 88.20s
+step 16500, loss 0.179, rec_loss 0.141, kl_loss 0.038, lr: 0.0005009, consume 88.54s
+step 17000, loss 0.179, rec_loss 0.141, kl_loss 0.038, lr: 0.0004949, consume 88.30s
+    valid loss: 0.179, rec_loss 0.141, kl_loss 0.038, consume: 28.196s
+epoch: 8, consume: 372.749s
+step 17500, loss 0.179, rec_loss 0.140, kl_loss 0.038, lr: 0.0004887, consume 73.19s
+step 18000, loss 0.179, rec_loss 0.141, kl_loss 0.038, lr: 0.0004824, consume 88.50s
+step 18500, loss 0.178, rec_loss 0.140, kl_loss 0.038, lr: 0.0004760, consume 88.55s
+step 19000, loss 0.178, rec_loss 0.139, kl_loss 0.038, lr: 0.0004694, consume 88.34s
+    valid loss: 0.179, rec_loss 0.141, kl_loss 0.038, consume: 28.286s
+epoch: 9, consume: 373.018s
+step 19500, loss 0.178, rec_loss 0.139, kl_loss 0.038, lr: 0.0004628, consume 90.28s
+step 20000, loss 0.177, rec_loss 0.139, kl_loss 0.038, lr: 0.0004560, consume 88.33s
+step 20500, loss 0.177, rec_loss 0.139, kl_loss 0.038, lr: 0.0004491, consume 88.82s
+    valid loss: 0.179, rec_loss 0.142, kl_loss 0.038, consume: 28.173s
+100%|████████████████████████████████████████████████████████████| 398/398 [00:21<00:00, 18.82it/s]
+100%|████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 18.85it/s]
+FID:  137.44736535729834
+epoch: 10, consume: 421.550s
+step 21000, loss 0.176, rec_loss 0.138, kl_loss 0.038, lr: 0.0004422, consume 18.96s
+step 21500, loss 0.176, rec_loss 0.138, kl_loss 0.038, lr: 0.0004351, consume 88.01s
+step 22000, loss 0.176, rec_loss 0.138, kl_loss 0.038, lr: 0.0004280, consume 88.11s
+step 22500, loss 0.176, rec_loss 0.138, kl_loss 0.038, lr: 0.0004207, consume 88.37s
+    valid loss: 0.177, rec_loss 0.139, kl_loss 0.038, consume: 28.141s
+epoch: 11, consume: 371.950s
+step 23000, loss 0.176, rec_loss 0.137, kl_loss 0.038, lr: 0.0004134, consume 36.20s
+step 23500, loss 0.176, rec_loss 0.138, kl_loss 0.038, lr: 0.0004061, consume 88.05s
+step 24000, loss 0.175, rec_loss 0.137, kl_loss 0.038, lr: 0.0003987, consume 88.16s
+step 24500, loss 0.175, rec_loss 0.137, kl_loss 0.038, lr: 0.0003912, consume 88.16s
+    valid loss: 0.178, rec_loss 0.139, kl_loss 0.039, consume: 28.252s
+epoch: 12, consume: 372.253s
+step 25000, loss 0.175, rec_loss 0.137, kl_loss 0.038, lr: 0.0003836, consume 53.31s
+step 25500, loss 0.175, rec_loss 0.136, kl_loss 0.038, lr: 0.0003761, consume 88.24s
+step 26000, loss 0.175, rec_loss 0.137, kl_loss 0.038, lr: 0.0003684, consume 88.18s
+step 26500, loss 0.174, rec_loss 0.136, kl_loss 0.038, lr: 0.0003608, consume 88.19s
+    valid loss: 0.175, rec_loss 0.137, kl_loss 0.038, consume: 28.423s
+epoch: 13, consume: 372.500s
+step 27000, loss 0.174, rec_loss 0.136, kl_loss 0.038, lr: 0.0003531, consume 70.60s
+step 27500, loss 0.174, rec_loss 0.136, kl_loss 0.038, lr: 0.0003454, consume 88.17s
+step 28000, loss 0.174, rec_loss 0.136, kl_loss 0.038, lr: 0.0003377, consume 88.20s
+step 28500, loss 0.174, rec_loss 0.136, kl_loss 0.038, lr: 0.0003300, consume 88.19s
+    valid loss: 0.179, rec_loss 0.140, kl_loss 0.039, consume: 28.234s
+epoch: 14, consume: 372.096s
+step 29000, loss 0.174, rec_loss 0.136, kl_loss 0.038, lr: 0.0003223, consume 87.91s
+step 29500, loss 0.173, rec_loss 0.135, kl_loss 0.038, lr: 0.0003146, consume 88.47s
+step 30000, loss 0.173, rec_loss 0.135, kl_loss 0.038, lr: 0.0003069, consume 88.21s
+    valid loss: 0.176, rec_loss 0.137, kl_loss 0.039, consume: 28.471s
+100%|████████████████████████████████████████████████████████████| 398/398 [00:21<00:00, 18.71it/s]
+100%|████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 18.74it/s]
+FID:  135.34174191815012
+epoch: 15, consume: 421.324s
+step 30500, loss 0.174, rec_loss 0.136, kl_loss 0.038, lr: 0.0002992, consume 16.36s
+step 31000, loss 0.173, rec_loss 0.135, kl_loss 0.038, lr: 0.0002916, consume 88.15s
+step 31500, loss 0.173, rec_loss 0.135, kl_loss 0.038, lr: 0.0002840, consume 88.36s
+step 32000, loss 0.172, rec_loss 0.134, kl_loss 0.038, lr: 0.0002764, consume 88.33s
+    valid loss: 0.173, rec_loss 0.135, kl_loss 0.038, consume: 28.245s
+epoch: 16, consume: 372.230s
+step 32500, loss 0.171, rec_loss 0.133, kl_loss 0.038, lr: 0.0002689, consume 33.72s
+step 33000, loss 0.172, rec_loss 0.134, kl_loss 0.038, lr: 0.0002614, consume 88.43s
+step 33500, loss 0.172, rec_loss 0.134, kl_loss 0.038, lr: 0.0002539, consume 88.23s
+step 34000, loss 0.172, rec_loss 0.134, kl_loss 0.038, lr: 0.0002466, consume 88.41s
+    valid loss: 0.174, rec_loss 0.136, kl_loss 0.038, consume: 28.198s
+epoch: 17, consume: 372.660s
+step 34500, loss 0.172, rec_loss 0.134, kl_loss 0.038, lr: 0.0002393, consume 50.76s
+step 35000, loss 0.172, rec_loss 0.134, kl_loss 0.038, lr: 0.0002321, consume 88.39s
+step 35500, loss 0.171, rec_loss 0.133, kl_loss 0.038, lr: 0.0002249, consume 88.28s
+step 36000, loss 0.171, rec_loss 0.133, kl_loss 0.038, lr: 0.0002179, consume 88.59s
+    valid loss: 0.172, rec_loss 0.134, kl_loss 0.037, consume: 28.366s
+epoch: 18, consume: 372.930s
+step 36500, loss 0.171, rec_loss 0.133, kl_loss 0.038, lr: 0.0002109, consume 67.88s
+step 37000, loss 0.171, rec_loss 0.133, kl_loss 0.038, lr: 0.0002040, consume 88.39s
+step 37500, loss 0.171, rec_loss 0.133, kl_loss 0.038, lr: 0.0001972, consume 88.25s
+step 38000, loss 0.171, rec_loss 0.133, kl_loss 0.038, lr: 0.0001906, consume 88.21s
+    valid loss: 0.173, rec_loss 0.135, kl_loss 0.038, consume: 28.317s
+epoch: 19, consume: 372.506s
+step 38500, loss 0.171, rec_loss 0.133, kl_loss 0.038, lr: 0.0001840, consume 84.98s
+step 39000, loss 0.171, rec_loss 0.133, kl_loss 0.038, lr: 0.0001776, consume 88.40s
+step 39500, loss 0.171, rec_loss 0.133, kl_loss 0.038, lr: 0.0001713, consume 88.21s
+    valid loss: 0.172, rec_loss 0.134, kl_loss 0.038, consume: 28.340s
+100%|████████████████████████████████████████████████████████████| 398/398 [00:21<00:00, 18.74it/s]
+100%|████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 18.73it/s]
+FID:  134.09296838128984
+epoch: 20, consume: 421.998s
+step 40000, loss 0.170, rec_loss 0.132, kl_loss 0.038, lr: 0.0001651, consume 13.89s
+step 40500, loss 0.170, rec_loss 0.132, kl_loss 0.038, lr: 0.0001591, consume 88.37s
+step 41000, loss 0.171, rec_loss 0.133, kl_loss 0.038, lr: 0.0001532, consume 88.44s
+step 41500, loss 0.170, rec_loss 0.132, kl_loss 0.038, lr: 0.0001474, consume 88.38s
+    valid loss: 0.172, rec_loss 0.133, kl_loss 0.038, consume: 28.433s
+epoch: 21, consume: 372.984s
+step 42000, loss 0.170, rec_loss 0.132, kl_loss 0.038, lr: 0.0001418, consume 31.02s
+step 42500, loss 0.170, rec_loss 0.132, kl_loss 0.038, lr: 0.0001364, consume 88.25s
+step 43000, loss 0.170, rec_loss 0.132, kl_loss 0.038, lr: 0.0001311, consume 88.76s
+step 43500, loss 0.170, rec_loss 0.132, kl_loss 0.038, lr: 0.0001260, consume 88.34s
+    valid loss: 0.173, rec_loss 0.134, kl_loss 0.039, consume: 28.398s
+epoch: 22, consume: 373.149s
+step 44000, loss 0.170, rec_loss 0.132, kl_loss 0.038, lr: 0.0001210, consume 48.12s
+step 44500, loss 0.169, rec_loss 0.132, kl_loss 0.038, lr: 0.0001162, consume 88.26s
+step 45000, loss 0.170, rec_loss 0.132, kl_loss 0.038, lr: 0.0001116, consume 88.67s
+step 45500, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0001071, consume 88.32s
+    valid loss: 0.172, rec_loss 0.133, kl_loss 0.038, consume: 28.354s
+epoch: 23, consume: 372.967s
+step 46000, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0001029, consume 65.25s
+step 46500, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0000988, consume 88.20s
+step 47000, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0000949, consume 88.34s
+step 47500, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0000912, consume 88.53s
+    valid loss: 0.171, rec_loss 0.134, kl_loss 0.038, consume: 28.202s
+epoch: 24, consume: 372.622s
+step 48000, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0000877, consume 82.22s
+step 48500, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0000844, consume 88.20s
+step 49000, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0000813, consume 88.54s
+    valid loss: 0.171, rec_loss 0.133, kl_loss 0.038, consume: 28.300s
+100%|████████████████████████████████████████████████████████████| 398/398 [00:21<00:00, 18.67it/s]
+100%|████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 18.64it/s]
+FID:  130.87389082832766
+epoch: 25, consume: 421.158s
+step 49500, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0000784, consume 11.08s
+step 50000, loss 0.168, rec_loss 0.130, kl_loss 0.038, lr: 0.0000757, consume 88.06s
+step 50500, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0000732, consume 88.19s
+step 51000, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0000709, consume 88.52s
+    valid loss: 0.172, rec_loss 0.133, kl_loss 0.039, consume: 28.322s
+epoch: 26, consume: 372.267s
+step 51500, loss 0.168, rec_loss 0.130, kl_loss 0.038, lr: 0.0000689, consume 28.25s
+step 52000, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0000670, consume 88.37s
+step 52500, loss 0.169, rec_loss 0.131, kl_loss 0.038, lr: 0.0000654, consume 88.26s
+step 53000, loss 0.168, rec_loss 0.130, kl_loss 0.038, lr: 0.0000640, consume 88.41s
+    valid loss: 0.170, rec_loss 0.132, kl_loss 0.038, consume: 28.497s
+epoch: 27, consume: 372.751s
+step 53500, loss 0.168, rec_loss 0.130, kl_loss 0.038, lr: 0.0000628, consume 45.44s
+step 54000, loss 0.168, rec_loss 0.131, kl_loss 0.038, lr: 0.0000618, consume 88.52s
+step 54500, loss 0.168, rec_loss 0.130, kl_loss 0.038, lr: 0.0000610, consume 88.26s
+step 55000, loss 0.168, rec_loss 0.130, kl_loss 0.038, lr: 0.0000604, consume 88.57s
+    valid loss: 0.172, rec_loss 0.134, kl_loss 0.039, consume: 28.538s
+epoch: 28, consume: 373.202s
+step 55500, loss 0.168, rec_loss 0.130, kl_loss 0.038, lr: 0.0000601, consume 62.67s
+step 56000, loss 0.168, rec_loss 0.130, kl_loss 0.038, lr: 0.0000600, consume 88.22s
+epoch: 29, consume: 198.571s
+100%|████████████████████████████████████████████████████████████| 398/398 [00:32<00:00, 12.40it/s]
+100%|████████████████████████████████████████████████████████████| 100/100 [00:05<00:00, 18.64it/s]
+FID:  133.34669761243072

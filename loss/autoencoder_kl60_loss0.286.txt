@@ -1,0 +1,91 @@
+AutoEncoderKL60_Config()
+	batch_size: 16
+	beta1: 0.9
+	beta2: 0.95
+	channels: [64, 64, 128, 256, 256]
+	compress_ratio: 8
+	embed_dim: 4
+	gpu_num: 3
+	grad_clip: 1.0
+	gradient_accumulation_steps: 4
+	img_size: 256
+	kl_weight: 0.001
+	layers: [2, 2, 2, 2]
+	learning_rate: 0.0006
+	lr_decay_iters: 12000
+	max_iters: 13000
+	min_lr: 6e-05
+	num_epoch: 1
+	rec_weight: 0.01
+	warmup_iters: 800
+	z_channel: 4
+
+total_params: 20.95M, encoder_params: 8.56M, decoder_params: 12.39M
+step 100, loss 568.618, rec_loss 565.405, kl_loss 3.213, lr: 0.0000742, consume 207.12s
+step 200, loss 367.835, rec_loss 362.397, kl_loss 5.438, lr: 0.0001492, consume 123.75s
+step 300, loss 298.065, rec_loss 291.085, kl_loss 6.979, lr: 0.0002242, consume 123.96s
+step 400, loss 271.739, rec_loss 263.290, kl_loss 8.449, lr: 0.0002992, consume 124.16s
+step 500, loss 246.616, rec_loss 236.990, kl_loss 9.627, lr: 0.0003743, consume 124.02s
+step 600, loss 240.562, rec_loss 230.492, kl_loss 10.070, lr: 0.0004492, consume 123.95s
+step 700, loss 234.273, rec_loss 223.820, kl_loss 10.453, lr: 0.0005242, consume 123.98s
+step 800, loss 230.808, rec_loss 219.842, kl_loss 10.966, lr: 0.0005992, consume 123.93s
+step 900, loss 215.930, rec_loss 205.026, kl_loss 10.905, lr: 0.0005999, consume 124.06s
+step 1000, loss 210.699, rec_loss 199.870, kl_loss 10.829, lr: 0.0005996, consume 124.06s
+step 1100, loss 201.352, rec_loss 190.538, kl_loss 10.814, lr: 0.0005991, consume 124.08s
+step 1200, loss 194.346, rec_loss 183.607, kl_loss 10.739, lr: 0.0005983, consume 124.02s
+step 1300, loss 186.444, rec_loss 175.667, kl_loss 10.777, lr: 0.0005974, consume 124.16s
+step 1400, loss 177.840, rec_loss 167.115, kl_loss 10.725, lr: 0.0005962, consume 124.07s
+step 1500, loss 171.417, rec_loss 160.793, kl_loss 10.624, lr: 0.0005948, consume 124.22s
+step 1600, loss 170.703, rec_loss 160.080, kl_loss 10.623, lr: 0.0005932, consume 124.14s
+step 1700, loss 168.578, rec_loss 157.986, kl_loss 10.592, lr: 0.0005915, consume 124.16s
+step 1800, loss 167.675, rec_loss 157.134, kl_loss 10.541, lr: 0.0005895, consume 124.29s
+step 1900, loss 163.398, rec_loss 152.806, kl_loss 10.592, lr: 0.0005873, consume 124.16s
+step 2000, loss 157.703, rec_loss 147.245, kl_loss 10.458, lr: 0.0005849, consume 124.15s
+step 2100, loss 160.522, rec_loss 150.132, kl_loss 10.390, lr: 0.0005823, consume 124.19s
+step 2200, loss 158.237, rec_loss 147.861, kl_loss 10.377, lr: 0.0005795, consume 124.25s
+step 2300, loss 157.944, rec_loss 147.648, kl_loss 10.295, lr: 0.0005765, consume 124.92s
+step 2400, loss 157.167, rec_loss 146.914, kl_loss 10.253, lr: 0.0005733, consume 124.17s
+step 2500, loss 153.366, rec_loss 143.176, kl_loss 10.191, lr: 0.0005699, consume 124.20s
+step 2600, loss 154.067, rec_loss 143.838, kl_loss 10.230, lr: 0.0005663, consume 124.26s
+step 2700, loss 151.773, rec_loss 141.637, kl_loss 10.137, lr: 0.0005626, consume 124.24s
+step 2800, loss 150.608, rec_loss 140.540, kl_loss 10.069, lr: 0.0005587, consume 124.24s
+step 2900, loss 148.526, rec_loss 138.426, kl_loss 10.099, lr: 0.0005545, consume 124.22s
+step 3000, loss 150.582, rec_loss 140.485, kl_loss 10.097, lr: 0.0005502, consume 124.20s
+step 3100, loss 147.039, rec_loss 136.852, kl_loss 10.187, lr: 0.0005458, consume 124.22s
+step 3200, loss 142.899, rec_loss 132.521, kl_loss 10.378, lr: 0.0005411, consume 124.20s
+step 3300, loss 141.729, rec_loss 131.295, kl_loss 10.434, lr: 0.0005363, consume 124.22s
+step 3400, loss 140.390, rec_loss 129.918, kl_loss 10.472, lr: 0.0005314, consume 124.22s
+step 3500, loss 137.215, rec_loss 126.753, kl_loss 10.463, lr: 0.0005263, consume 124.22s
+step 3600, loss 137.406, rec_loss 126.952, kl_loss 10.454, lr: 0.0005210, consume 124.18s
+step 3700, loss 138.205, rec_loss 127.775, kl_loss 10.429, lr: 0.0005155, consume 124.16s
+step 3800, loss 136.363, rec_loss 125.911, kl_loss 10.452, lr: 0.0005100, consume 124.13s
+step 3900, loss 135.704, rec_loss 125.259, kl_loss 10.445, lr: 0.0005043, consume 124.13s
+step 4000, loss 135.105, rec_loss 124.687, kl_loss 10.418, lr: 0.0004984, consume 124.15s
+step 4100, loss 134.797, rec_loss 124.377, kl_loss 10.419, lr: 0.0004924, consume 124.15s
+step 4200, loss 134.447, rec_loss 124.064, kl_loss 10.383, lr: 0.0004863, consume 124.13s
+step 4300, loss 133.279, rec_loss 122.936, kl_loss 10.343, lr: 0.0004801, consume 124.18s
+step 4400, loss 131.884, rec_loss 121.489, kl_loss 10.395, lr: 0.0004737, consume 124.18s
+step 4500, loss 131.287, rec_loss 120.932, kl_loss 10.356, lr: 0.0004672, consume 124.17s
+step 4600, loss 132.426, rec_loss 122.060, kl_loss 10.365, lr: 0.0004607, consume 124.94s
+step 4700, loss 132.241, rec_loss 121.891, kl_loss 10.350, lr: 0.0004540, consume 124.11s
+step 4800, loss 130.725, rec_loss 120.362, kl_loss 10.362, lr: 0.0004472, consume 124.22s
+step 4900, loss 130.781, rec_loss 120.431, kl_loss 10.350, lr: 0.0004403, consume 124.17s
+step 5000, loss 131.056, rec_loss 120.688, kl_loss 10.368, lr: 0.0004334, consume 124.18s
+step 5100, loss 129.859, rec_loss 119.521, kl_loss 10.338, lr: 0.0004264, consume 124.17s
+step 5200, loss 128.208, rec_loss 117.881, kl_loss 10.327, lr: 0.0004192, consume 124.22s
+step 5300, loss 127.638, rec_loss 117.327, kl_loss 10.310, lr: 0.0004121, consume 124.23s
+step 5400, loss 129.243, rec_loss 118.938, kl_loss 10.305, lr: 0.0004048, consume 124.16s
+step 5500, loss 129.235, rec_loss 118.946, kl_loss 10.289, lr: 0.0003975, consume 124.14s
+step 5600, loss 127.337, rec_loss 117.045, kl_loss 10.291, lr: 0.0003902, consume 124.18s
+step 5700, loss 128.284, rec_loss 118.004, kl_loss 10.280, lr: 0.0003827, consume 124.18s
+step 5800, loss 125.502, rec_loss 115.156, kl_loss 10.345, lr: 0.0003753, consume 124.16s
+step 5900, loss 126.558, rec_loss 116.239, kl_loss 10.319, lr: 0.0003678, consume 124.20s
+step 6000, loss 127.854, rec_loss 117.569, kl_loss 10.285, lr: 0.0003603, consume 124.14s
+step 6100, loss 126.715, rec_loss 116.412, kl_loss 10.303, lr: 0.0003528, consume 124.19s
+step 6200, loss 126.059, rec_loss 115.743, kl_loss 10.316, lr: 0.0003452, consume 124.16s
+step 6300, loss 125.202, rec_loss 114.895, kl_loss 10.307, lr: 0.0003376, consume 124.01s
+step 6400, loss 124.763, rec_loss 114.466, kl_loss 10.297, lr: 0.0003301, consume 124.05s
+step 6500, loss 123.990, rec_loss 113.689, kl_loss 10.300, lr: 0.0003225, consume 124.01s
+step 6600, loss 125.116, rec_loss 114.862, kl_loss 10.254, lr: 0.0003149, consume 124.07s
+    valid loss: 135.219, rec_loss 124.698, kl_loss 10.521, consume: 306.551s
+epoch: 0, consume: 8676.092s
